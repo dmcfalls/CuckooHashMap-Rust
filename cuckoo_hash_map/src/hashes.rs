@@ -15,7 +15,7 @@ pub struct HashFamily {
 }
 
 pub fn random_table_input() -> i32 {
-	let between = rand::distributions::Range::new(0, 1 << 10);
+	let between = rand::distributions::Range::new(0, 1 << 30);
 	let mut rng = rand::thread_rng();
 	return between.ind_sample(&mut rng);
 }
@@ -72,6 +72,6 @@ pub fn five_indep_hash_family() -> Arc<HashFamily> {
 
 	Arc::new(HashFamily {
 		get: Box::new(get_implementation),
-		name: "3-Independent Hash Family".into()
+		name: "5-Independent Hash Family".into()
 	})
 }
