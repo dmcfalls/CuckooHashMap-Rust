@@ -1,0 +1,7 @@
+[package]
+name = "cuckoo_hash_map"
+version = "0.1.0"
+authors = ["dmcfalls <dmcfalls@stanford.edu>"]
+
+[dependencies]
+rand = "0.3"
