@@ -9,9 +9,9 @@ use hashes::{two_indep_hash_family, three_indep_hash_family, five_indep_hash_fam
 
 fn correctness_tests(size: usize) {
 	println!("Correctness Tests for single-threaded version:");
-	let hashes = [two_indep_hash_family, three_indep_hash_family, five_indep_hash_family];
-	for hash in hashes.iter() {
-		let mut table: CuckooHashTable = CuckooHashTable::new(size, hash());
+	let hash_families = [two_indep_hash_family, three_indep_hash_family, five_indep_hash_family];
+	for hash_family in hash_families.iter() {
+		let mut table: CuckooHashTable = CuckooHashTable::new(size, hash_family());
 		table.insert(5);
 		table.insert(7);
 		assert!(table.contains(5));
